@@ -7,7 +7,7 @@ import { chatSession } from '@/service/AIModel';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/service/firebase';
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+// import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useToast } from "@/hooks/use-toast"
 import Loader from "../components/loader/Loader"
 

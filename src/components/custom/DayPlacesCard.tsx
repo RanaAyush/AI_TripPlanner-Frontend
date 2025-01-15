@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Clock, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, Star } from "lucide-react";
 import { AiFillShop } from "react-icons/ai";
 
-const DayPlacesCard = ({ place }) => {
+const DayPlacesCard = ({ place }:any) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleCollapse = () => setIsOpen((prev) => !prev);

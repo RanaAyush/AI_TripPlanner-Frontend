@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Herosection = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
+  // const [isAnimating, setIsAnimating] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    setIsAnimating(true);
+    // setIsAnimating(true);
 
     // After animation completes, navigate to the new page
     // setTimeout(() => {

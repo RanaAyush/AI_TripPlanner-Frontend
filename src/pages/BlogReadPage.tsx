@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '@/components/custom/Navbar';
 import Footer from '@/components/custom/Footer';
+// @ts-ignore
 import STRIPI_API_ENDPOINT from '../utils/constants.js';
 import { useParams } from 'react-router-dom';
 import { RiShareBoxLine } from "react-icons/ri";
 
 const BlogReadPage = () => {
     const { id } = useParams();
-    const [blogContent, setBlogContent] = useState(null);
+    const [blogContent, setBlogContent]:any = useState(null);
 
     const getBlogContent = async () => {
         try {
@@ -114,7 +115,7 @@ const BlogReadPage = () => {
                 <div className="mt-8">
                     <h3 className="text-xl font-semibold mb-4">Tags:</h3>
                     <div className="flex gap-2 flex-wrap">
-                        {blogContent?.tags?.map((tag, index) => (
+                        {blogContent?.tags?.map((tag:any, index:number) => (
                             <span
                                 key={index}
                                 className="bg-gray-200 rounded-full px-4 py-1 text-sm font-medium text-gray-600">

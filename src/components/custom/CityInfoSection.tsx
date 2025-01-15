@@ -12,14 +12,15 @@ const CityInfoSection = ({ locationInfo, activitiesToEnjoy }: any) => {
     const formatLabel = (key: any) => {
         return key
             .replace(/([A-Z])/g, ' $1') // Add space before uppercase letters
-            .replace(/^./, (str) => str.toUpperCase()) // Capitalize the first letter
+            .replace(/^./, (str:string) => str.toUpperCase()) // Capitalize the first letter
     };
 
     // Create a new object with updated keys
-    const updatedlifeQualityIndices = Object.entries(lifeQualityIndices).reduce((acc, [key, value]) => {
+    const updatedLifeQualityIndices = Object.entries(lifeQualityIndices).reduce<Record<string, typeof lifeQualityIndices[keyof typeof lifeQualityIndices]>>((acc, [key, value]) => {
         acc[formatLabel(key)] = value;
         return acc;
     }, {});
+    
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isSmallDevice, setIsSmallDevice] = useState(false);
@@ -73,7 +74,7 @@ const CityInfoSection = ({ locationInfo, activitiesToEnjoy }: any) => {
                     Life Quality Indices
                 </h2>
                 <div className="space-y-1">
-                    {Object.entries(updatedlifeQualityIndices).map(([service, number]: any) => (
+                    {Object.entries(updatedLifeQualityIndices).map(([service, number]: any) => (
                         <div key={service} className="text-sm flex justify-between">
                             <span>{service}</span>
                             <span>{number}</span>
@@ -91,7 +92,7 @@ const CityInfoSection = ({ locationInfo, activitiesToEnjoy }: any) => {
                             transform: `translateX(-${(currentSlide) * (isSmallDevice ? 25 : 60)}%)`,
                             width: `${activitiesToEnjoy.length * (isSmallDevice ? 25 : 50)}%`,
                         }}>
-                        {activitiesToEnjoy.map((activity) => (
+                        {activitiesToEnjoy.map((activity:any) => (
                             <Card key={activity.name} className="w-[300px] shrink-0">
                                 <CardContent className="p-0">
                                     <img

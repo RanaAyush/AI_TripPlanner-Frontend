@@ -23,25 +23,19 @@ import InviteDialog from '@/components/custom/InviteDialog'
 //     tripData:[]
 // }
 
-interface TravelCardProps {
-    destination: string;
-    startDate: string;
-    endDate: string;
-    persons: number;
-    imageUrl?: string;
-}
+// interface TravelCardProps {
+//     destination: string;
+//     startDate: string;
+//     endDate: string;
+//     persons: number;
+//     imageUrl?: string;
+// }
 
 
-const ViewTrip = ({
-    destination = "Goa",
-    startDate = "16 Aug 2024",
-    endDate = "19 Aug 2024",
-    persons = 1,
-    imageUrl = "/TripView.png"
-}: TravelCardProps) => {
+const ViewTrip = () => {
 
     const { id } = useParams();
-    const [tripData, setTripData] = useState({})
+    const [tripData, setTripData]:any = useState({})
     const [activeTab, setActiveTab] = useState("Itinerary");
     const [openInvite, setOpenInvite] = useState(false);
     const [isTripLiked, setTripLiked] = useState(false);
@@ -83,7 +77,7 @@ const ViewTrip = ({
                         <div
                             className="absolute inset-0 bg-cover bg-center"
                             style={{
-                                backgroundImage: `url(${imageUrl})`,
+                                backgroundImage: `url(/TripView.png)`,
                                 backgroundPosition: 'center 70%'
                             }}
                         />

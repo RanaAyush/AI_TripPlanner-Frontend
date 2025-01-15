@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from "../ui/card";
 // @ts-ignore
 import STRIPI_API_ENDPOINT from '../../utils/constants.js';
@@ -80,7 +80,7 @@ const Testimonials = () => {
             transform: `translateX(-${currentSlide * (isSmallDevice ? 25 : 60)}%)`,
             width: `${TestimonialsData.length * (isSmallDevice ? 100 : 105)}%`,
           }}>
-          {TestimonialsData.map((testimonial, index) => (
+          {TestimonialsData.map((testimonial:any, index:number) => (
             <Card key={index} className="hover:shadow-lg cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out relative overflow-hidden" style={{ backgroundColor: colors[index % 3], flexBasis: "35%" }}>
 
               <div className='absolute inset-0'>

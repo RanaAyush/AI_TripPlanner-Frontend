@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "start": "vite preview", 
     "lint": "eslint .",
-    "preview": "vite preview"
+    "serve": "serve dist"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

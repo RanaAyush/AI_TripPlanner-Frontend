@@ -51,7 +51,7 @@ const BlogPage = () => {
                 }
 
                 <div className="space-y-6">
-                    {blogData.map((blog, index) => (
+                    {blogData.map((blog:any, index:number) => (
                         <Card key={index} className="overflow-hidden shadow-md rounded-lg transition-all hover:shadow-lg hover:scale-105 cursor-pointer" onClick={() => { navigate(`/blogs/${blog.documentId}`) }}>
                             <CardContent className="p-4 flex flex-col md:flex-row gap-4">
                                 {/* Blog Image */}
@@ -75,7 +75,7 @@ const BlogPage = () => {
                                         <h2 className="text-xl font-semibold text-gray-900 mb-2">{blog.blog_title}</h2>
                                         <p className="text-gray-600 mb-4">{blog.short_description.substring(0, 210)}...</p>
                                         <div className="flex gap-2 flex-wrap text-sm text-gray-500">
-                                            {blog?.tags?.map((tag, tagIndex) => (
+                                            {blog?.tags?.map((tag:any, tagIndex:number) => (
                                                 <span
                                                     key={tagIndex}
                                                     className="bg-gray-200 rounded-full px-3 py-1 text-xs font-medium">

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import ItineraryDay from './ItineraryDay';
 
 const TripDetails = ({ tripData }: any) => {
-    const [hotelOptions, sethotelOptions] = useState([]);
+    const [hotelOptions, sethotelOptions]:any = useState([]);
     const { itinerary } = tripData.tripData;
     useEffect(() => {
         // console.log(tripData.tripData?.hotelOptions);
@@ -50,7 +50,7 @@ const TripDetails = ({ tripData }: any) => {
                             width: `${hotelOptions.length * 50}%`, // Adjust width dynamically
                         }}
                     >
-                        {hotelOptions.map((hotel, index) => (
+                        {hotelOptions.map((hotel:any, index:number) => (
                             <div
                                 key={index}
 

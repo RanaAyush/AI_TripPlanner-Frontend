@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DayPlacesCard from './DayPlacesCard';
 import { CalendarRange } from 'lucide-react';
 
-const ItineraryDay = ({ dayKey, dayDetails }) => {
+const ItineraryDay = ({ dayKey, dayDetails }:any) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleCollapse = () => setIsOpen((prev) => !prev);
@@ -34,7 +34,7 @@ const ItineraryDay = ({ dayKey, dayDetails }) => {
                         <Clock className="w-4 h-4" />
                         <span>{dayDetails.bestTimeToVisit}</span>
                     </div>
-                    {dayDetails.activities.map((place, index) => (
+                    {dayDetails.activities.map((place:any, index:number) => (
                         <DayPlacesCard
                             key={index}
                             place={place}

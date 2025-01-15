@@ -10,30 +10,32 @@ import { Link, useNavigate } from 'react-router-dom'
 const MyTrips = () => {
     const navigate = useNavigate();
 
-    const [myTrips,setMyTrips]=useState([])
+    const [myTrips, setMyTrips]: any = useState([])
 
     const getTripData = async (userEmail: string) => {
         try {
             const tripsRef = collection(db, 'AITrips');
             const q = query(tripsRef, where('userEmail', '==', userEmail));
             const querySnapshot = await getDocs(q);
-            
+
             const trips = querySnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
             }));
-            
+
             setMyTrips(trips);
-            
+
         } catch (error) {
             console.error('Error fetching trips:', error);
         }
     };
-    useEffect(()=>{
-        const user = JSON.parse(localStorage.getItem('user'));
+    useEffect(() => {
+        const usert = localStorage.getItem('user');
+        const user = usert ? JSON.parse(usert) : null;
+
         const email = user?.email;
         getTripData(email);
-    },[])
+    }, [])
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
@@ -47,8 +49,8 @@ const MyTrips = () => {
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-8">
-                    {myTrips.map((trip, index) => (
-                        <Card key={index} className="overflow-hidden shadow-none cursor-pointer hover:scale-105 hover:shadow-md transition-all" onClick={()=>{navigate(`/view-trip/${trip.id}`)}}>
+                    {myTrips.map((trip: any, index: number) => (
+                        <Card key={index} className="overflow-hidden shadow-none cursor-pointer hover:scale-105 hover:shadow-md transition-all" onClick={() => { navigate(`/view-trip/${trip.id}`) }}>
                             <CardContent className="p-0">
                                 <div className="relative">
                                     <img
