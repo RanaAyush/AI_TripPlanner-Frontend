@@ -32,11 +32,11 @@ const DayPlacesCard = ({ place }:any) => {
                 className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-full opacity-100" : "max-h-0 opacity-0"
                     }`}
             >
-                <div className="space-y-4 p-4">
+                <div className="space-y-4 md:p-4">
 
                     <div className="bg-white shadow rounded-lg overflow-hidden">
                         <div className="p-4">
-                            <div className="flex justify-between gap-4">
+                            <div className="flex justify-between gap-4 flex-col md:flex-row">
                                 <img
                                     // src={place.placeImageUrl || "/bali.jpg"}
                                     src={ "/bali.jpg"}

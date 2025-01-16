@@ -105,8 +105,8 @@ const PlannerMeal = () => {
                 <Loader/>
             }
             <Navbar />
-            <div className="w-2/3 my-14 mx-auto">
-                <Card className="w-full max-w-xl mx-auto p-6 border-none shadow-none">
+            <div className="w-full md:w-2/3 my-14 mx-0 md:mx-auto">
+                <Card className="w-full max-w-xl mx-2 md:mx-auto p-2 md:p-6 border-none shadow-none">
                     <CardHeader>
                         <CardTitle className="text-4xl text-center font-bold mb-3">Meal Preferences</CardTitle>
                         <p className="text-center text-muted-foreground">

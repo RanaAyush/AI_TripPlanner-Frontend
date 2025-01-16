@@ -51,7 +51,7 @@ const CityInfoSection = ({ locationInfo, activitiesToEnjoy }: any) => {
     };
 
     return (
-        <div className="lg:max-w-2xl md:max-w-2xl max-w-[30rem] mx-auto p-6 space-y-8">
+        <div className="lg:max-w-2xl md:max-w-2xl max-w-[25rem] mx-auto p-6 space-y-8">
             {/* Emergency Numbers Section */}
             <section>
                 <h2 className="flex items-center gap-2 font-medium mb-3 text-lg">

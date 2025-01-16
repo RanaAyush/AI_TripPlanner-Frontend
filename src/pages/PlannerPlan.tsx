@@ -105,8 +105,8 @@ const PlannerPlan = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
-            <div className="w-2/3 my-14 mx-auto">
-                <Card className="w-full max-w-2xl mx-auto px-6 border-none shadow-none">
+            <div className="w-full md:w-2/3 my-14 mx-2 md:mx-auto">
+                <Card className="w-full max-w-2xl mx-auto px-2 md:px-6 border-none shadow-none">
                     <CardHeader>
                         <CardTitle className="text-4xl font-bold text-center mb-3">
                             Lets plan your trip!
@@ -255,7 +255,7 @@ const PlannerPlan = () => {
                             </div>
                         </div>
 
-                        <div className="w-full mx-24">
+                        <div className="w-full md:mx-24">
                             <Button
                                 className="w-2/3"
                                 onClick={(e) => checkData(e)}

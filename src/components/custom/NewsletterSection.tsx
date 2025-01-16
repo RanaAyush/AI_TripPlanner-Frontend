@@ -38,16 +38,16 @@ const NewsletterSection = () => {
       </div>
 
       {/* Newsletter Section */}
-      <div className="bg-white rounded-2xl shadow-sm border max-w-7xl">
-        <div className="flex flex-row gap-10">
-          <div className="w-2/5 my-auto p-4">
+      <div className="bg-white rounded-2xl shadow-sm border max-w-7xl px-3 text-justify md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-5">
+          <div className=" col-span-2 my-auto p-4">
             <img
               src="/FeaturedImage/frame3.png"
               alt="Travel adventure"
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
-          <div className="p-8 pl-0 flex flex-col justify-center">
+          <div className="col-span-3 p-8 pl-0 flex flex-col justify-center">
             <h2 className="text-4xl font-semibold mb-2">Get special offers, and more <br /> about travel!</h2>
             <p className="text-gray-500 mb-6">
               Subscribe to see secrete deals price drops the moment you sign up.

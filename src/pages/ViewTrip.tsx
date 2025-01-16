@@ -159,7 +159,7 @@ const ViewTrip = () => {
                         <div>
                             <CityInfoSection locationInfo={tripData?.tripData?.locationInfo} activitiesToEnjoy={tripData?.tripData?.activitiesToEnjoy} />
                         </div>
-                        <div className='lg:max-w-2xl md:max-w-2xl max-w-[30rem] flex  items-start mt-6 mx-auto'>
+                        <div className='lg:max-w-2xl md:max-w-2xl max-w-[25rem] flex  items-start mt-6 mx-2 md:mx-auto'>
                             <img src="/paris.png" alt="paris" />
                         </div>
                     </div>

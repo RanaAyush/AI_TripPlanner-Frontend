@@ -22,7 +22,7 @@ const AboutUsSection = () => {
                         alt="line"
                         className="absolute hidden md:flex left-[5%] md:left-[9%] transform rotate-[-5deg] -top-[18%] md:-top-[22%] w-[80%] md:w-[69%]"
                     />
-                    <div className="absolute left-[-2%] md:-left-[11%] top-[5%] md:top-[2%] w-[20vw] md:w-[25vw] h-[20vh] md:h-[25vh] rounded-full overflow-hidden">
+                    <div className="absolute left-[-2%] md:-left-[11%] top-[3%] md:top-[2%] w-[20vw] md:w-[25vw] h-[20vh] md:h-[25vh] rounded-full overflow-hidden">
                         <img
                             src="/aboutImg/about1.png"
                             alt="Louvre Museum"
@@ -36,7 +36,7 @@ const AboutUsSection = () => {
                         alt="line"
                         className="absolute -left-5 transform rotate-[3deg] top-20 md:top-28 hidden md:flex"
                     />
-                    <div className="absolute left-16 md:left-20 bottom-36 md:bottom-20 w-16 md:w-24 h-16 md:h-24 rounded-full overflow-hidden">
+                    <div className="absolute left-13 md:left-20 bottom-36 md:bottom-20 w-16 md:w-24 h-16 md:h-24 rounded-full overflow-hidden">
                         <img
                             src="/aboutImg/about4.png"
                             alt="Cliff view"
@@ -59,7 +59,7 @@ const AboutUsSection = () => {
                     </div>
 
                     {/* Small mountain image */}
-                    <div className="absolute right-[-2%] md:-right-10 top-32 md:top-40 w-24 md:w-32 h-24 md:h-32 rounded-full overflow-hidden">
+                    <div className="absolute right-[-2%] md:-right-10 top-56 md:top-40 w-24 md:w-32 h-24 md:h-32 rounded-full overflow-hidden">
                         <img
                             src="/aboutImg/about6.png"
                             alt="Mountain view"
@@ -68,7 +68,7 @@ const AboutUsSection = () => {
                     </div>
 
                     {/* Large temple image */}
-                    <div className="absolute right-16 md:right-24 -top-8 md:-top-10 w-36 md:w-44 h-36 md:h-44 rounded-full overflow-hidden">
+                    <div className="absolute right-10 md:right-24 -top-14 md:-top-10 w-36 md:w-44 h-36 md:h-44 rounded-full overflow-hidden">
                         <img
                             src="/aboutImg/about5.png"
                             alt="Temple"
@@ -76,7 +76,7 @@ const AboutUsSection = () => {
                         />
                     </div>
 
-                    <div className="absolute right-16 md:right-48 top-60 md:top-72 w-20 md:w-24 h-20 md:h-24 rounded-full overflow-hidden">
+                    <div className="absolute right-16 md:right-48 top-80 md:top-72 w-20 md:w-24 h-20 md:h-24 rounded-full overflow-hidden">
                         <img
                             src="/aboutImg/about3.png"
                             alt="Temple"
@@ -126,7 +126,7 @@ const AboutUsSection = () => {
             </div>
 
             <div className="mx-auto px-4 py-4 max-w-6xl">
-                <div className="grid grid-cols-12 gap-20 mb-24 items-center">
+                <div className="grid grid-cols-8 md:grid-cols-12 gap-5 mb-24 items-center">
                     <div className="col-span-8 md:col-span-4 bg-gray-200 aspect-square rounded-lg">
                         <img
                             src="/aboutImg/vision.jpg"
@@ -134,7 +134,7 @@ const AboutUsSection = () => {
                             className="w-full h-full object-cover rounded-lg"
                         />
                     </div>
-                    <div className="col-span-8 md:col-span-8 space-y-4">
+                    <div className="col-span-8 space-y-4 mx-2">
                         <h2 className="text-4xl font-bold">Our vision</h2>
                         <p className="text-gray-600 leading-relaxed">
                             Our vision is to become the go-to platform for travel enthusiasts worldwide,
@@ -146,8 +146,8 @@ const AboutUsSection = () => {
                 </div>
 
                 {/* Mission Section */}
-                <div className="grid grid-cols-12 gap-20 mb-24 items-center ">
-                    <div className="col-span-8 md:col-span-8 space-y-4">
+                <div className="grid grid-cols-8 md:grid-cols-12 gap-5 mb-24 items-center">
+                    <div className="col-span-8 space-y-4">
                         <h2 className="text-4xl font-bold">Mission</h2>
                         <p className="text-gray-600 leading-relaxed">
                             At Hola Trip, our mission is to revolutionize the way people plan their travels

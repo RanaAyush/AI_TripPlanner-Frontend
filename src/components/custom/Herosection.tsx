@@ -31,7 +31,7 @@ const Herosection = () => {
 
       {/* Highlighted Top Badge */}
       <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border-gray-300 border-2 max-w-full sm:max-w-fit">
-        <span className="text-xs sm:text-sm font-semibold text-gray-600 whitespace-normal sm:whitespace-nowrap text-center typewriter">
+        <span className="text-xs sm:text-sm font-semibold text-gray-600 whitespace-normal sm:whitespace-nowrap text-center md:typewriter">
           🌍 Explore the Beautiful world with AI
         </span>
       </div>

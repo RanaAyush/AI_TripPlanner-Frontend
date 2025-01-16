@@ -46,7 +46,7 @@ function App() {
           <img src="/sideGIF/baloon.png" alt="sideimg" />
         </div>
       </div>
-      <div className='flex flex-col mt-28 gap-8 text-center px-32 mb-10'>
+      <div className='flex flex-col mt-28 gap-8 text-center px-8 md:px-32 mb-10'>
         <h1 className='text-3xl font-semibold mb-5 animate-right'>Why should you choose Hola Trip.</h1>
         <HolaTripCards />
       </div>
@@ -57,19 +57,19 @@ function App() {
         </div>
         <PlacesCard />
       </div>
-      <div className='flex flex-col mt-28 gap-8 px-24 mb-10 relative'>
+      <div className='flex flex-col mt-28 gap-8 px-8 md:px-24 mb-10 relative'>
         <div className="flex absolute -z-10 left-0 -top-16">
           <img src="/sideGIF/side3.png" alt="sideimg" />
         </div>
         <Testimonials />
       </div>
-      <div className='flex flex-col mt-28 gap-8 px-24 relative'>
+      <div className='flex flex-col mt-28 gap-8 px-4 md:px-24 relative'>
         <FeaturedPosts />
         <div className="flex absolute -z-10 right-0 -bottom-32">
           <img src="/sideGIF/side4.png" alt="sideimg" />
         </div>
       </div>
-      <div className='mt-28 px-16'>
+      <div className='mt-28 px-2 md:px-16'>
         <NewsletterSection />
       </div>
       <div className='mt-12 p-2'>

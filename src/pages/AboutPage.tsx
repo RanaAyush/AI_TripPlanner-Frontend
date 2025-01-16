@@ -9,7 +9,7 @@ const AboutPage = () => {
             <div className='mb-28 mt-28'>
                 <AboutUsSection/>
             </div>
-            <div className="w-full p-2">
+            <div className="w-full p-0 md:p-2">
                 <Footer />
             </div>
         </div>
