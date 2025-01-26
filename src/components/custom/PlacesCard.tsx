@@ -20,26 +20,28 @@ const PlacesCard: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col px-4 md:px-24 py-6">
+    <div className="container mx-auto px-4 py-6 md:px-28">
       {/* Buttons Section */}
-      <div className="mt-2 flex flex-wrap gap-0 md:gap-4 justify-center md:justify-start mb-10 bg-black p-4 rounded-full w-full md:w-[50%]">
-        {Object.keys(images).map((location) => (
-          <button
-            key={location}
-            onClick={() => handleLocationChange(location)}
-            className={`px-4 py-2 rounded-full font-semibold text-md outline-none transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white ${
-              currentLocation === location
-                ? 'bg-white text-black hover:bg-gray-100'
-                : 'bg-black text-white hover:bg-gray-500'
-            }`}
-          >
-            {location}
-          </button>
-        ))}
+      <div className="flex flex-wrap items-center justify-center md:justify-start mb-8 bg-black p-3 rounded-full w-full lg:w-3/4 xl:w-1/2">
+        <div className="flex flex-row flex-wrap gap-2 justify-center sm:justify-start w-full">
+          {Object.keys(images).map((location) => (
+            <button
+              key={location}
+              onClick={() => handleLocationChange(location)}
+              className={`px-4 py-2 rounded-full font-semibold text-lg sm:text-md whitespace-nowrap outline-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white ${
+                currentLocation === location
+                  ? 'bg-white text-black hover:bg-gray-100'
+                  : 'bg-black text-white hover:bg-gray-500'
+              }`}
+            >
+              {location}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Image Section */}
-      <div className="relative w-full max-w-5xl">
+      <div className="relative w-full max-w-5xl mx-auto">
         <img
           src={images[currentLocation]}
           alt={currentLocation}

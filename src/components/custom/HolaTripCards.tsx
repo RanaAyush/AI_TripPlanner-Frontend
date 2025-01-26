@@ -2,7 +2,7 @@ import React from 'react';
 
 const HolaTripCards: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-left">
       <div className="p-6 rounded-xl shadow-md hover:bg-blue-100 hover:border-2 border-blue-400 transition-colors duration-300 cursor-pointer animate-right">
         <div className="text-4xl my-6">
           <img src="/sideGIF/map.png" alt="icon" />

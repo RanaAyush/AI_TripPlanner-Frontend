@@ -42,7 +42,7 @@ const Footer = () => {
             <p className="text-gray-400">
               Subscribe to our newsletter for travel tips, updates, and special offers!
             </p>
-            <div className="flex gap-2">
+            <div className="flex sm:flex-col md:flex-row gap-2">
               <Input 
                 type="email" 
                 placeholder="Type your email address" 
@@ -63,12 +63,9 @@ const Footer = () => {
             <a href="#" className="bg-gray-900 p-2 rounded-full hover:bg-gray-500">
               <AiFillInstagram className="w-5 h-5"/>
             </a>
-            <a href="#" className="bg-gray-900 p-2 rounded-full hover:bg-gray-500">
-              <FaLinkedin className="w-5 h-5"/>
-            </a>
-            <a href="#" className="bg-gray-900 p-2 rounded-full hover:bg-gray-500">
+            {/* <a href="#" className="bg-gray-900 p-2 rounded-full hover:bg-gray-500">
               <FaYoutube className="w-5 h-5"/>
-            </a>
+            </a> */}
           </div>
           </div>
         </div>

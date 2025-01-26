@@ -62,6 +62,7 @@ const ViewTrip = () => {
                 setTripData(docSnap.data());
             } else {
                 console.log('Document does not exist');
+                navigate('/not-found')
             }
         } catch (error) {
             console.error('Error fetching trip data:', error);

@@ -14,7 +14,7 @@ function App() {
   return (
 
     <div>
-      <div className="min-h-screen w-full relative overflow-hidden">
+      <div className="h-[50rem] md:h-full md:min-h-screen w-full relative overflow-hidden">
         <div className="orb orb1"></div>
         <div className="orb orb2"></div>
         <div className="orb orb3"></div>
@@ -50,7 +50,7 @@ function App() {
         <h1 className='text-3xl font-semibold mb-5 animate-right'>Why should you choose Hola Trip.</h1>
         <HolaTripCards />
       </div>
-      <div className='flex flex-col mt-28 gap-8 px-4 md:px-32 mb-10 relative'>
+      <div className='flex flex-col mt-28 gap-8 px-4 md:px-20 lg:px-32 mb-10 relative'>
         <h1 className='text-4xl font-semibold pl-10 md:pl-24'>Unforgettable places in earth</h1>
         <div className="flex absolute -z-10 right-0 -top-16">
           <img src="/sideGIF/ship.png" alt="sideimg" />
