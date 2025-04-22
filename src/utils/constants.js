@@ -1,2 +1,2 @@
-const STRIPI_API_ENDPOINT='http://localhost:1337'
+const STRIPI_API_ENDPOINT='http://13.235.70.13:1337'
 export default STRIPI_API_ENDPOINT;
