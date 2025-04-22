@@ -1,14 +1,13 @@
 import Footer from '@/components/custom/Footer'
+import MyTripsTripCard from '@/components/custom/MyTripsTripCard'
 import Navbar from '@/components/custom/Navbar'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { db } from '@/service/firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const MyTrips = () => {
-    const navigate = useNavigate();
 
     const [myTrips, setMyTrips]: any = useState([])
 
@@ -50,26 +49,7 @@ const MyTrips = () => {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 my-8">
                     {myTrips.map((trip: any, index: number) => (
-                        <Card key={index} className="overflow-hidden shadow-none cursor-pointer hover:scale-105 hover:shadow-md transition-all" onClick={() => { navigate(`/view-trip/${trip.id}`) }}>
-                            <CardContent className="p-0">
-                                <div className="relative">
-                                    <img
-                                        // src={trip.tripData.locationInfo.imageUrl || '/paris.png'}
-                                        src={'/paris.png'}
-                                        alt={trip.tripData.location}
-                                        className="w-full h-44 object-cover"
-                                    />
-                                </div>
-                                <div className="p-4">
-                                    <h3 className="font-medium mb-2">{trip.tripData.location}</h3>
-                                    <div className='flex gap-6'>
-
-                                        <p>🗓️ {trip.tripData.startDate}</p>
-                                        <p>⌛ {trip.tripData.duration}</p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <MyTripsTripCard key={index} trip={trip} />
                     ))}
                 </div>
             </div>

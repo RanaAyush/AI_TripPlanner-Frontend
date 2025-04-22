@@ -15,21 +15,8 @@ import TripDetails from '@/components/custom/TripDetails'
 import CityInfoSection from '@/components/custom/CityInfoSection'
 import TopSights from '@/components/custom/TopSights'
 import InviteDialog from '@/components/custom/InviteDialog'
+import { getPlaceImage, getWikipediaTitle } from '@/service/ImagesAPI'
 
-// interface TripData {
-//     id: string;
-//     userEmail: string;
-//     userSelection: [],
-//     tripData:[]
-// }
-
-// interface TravelCardProps {
-//     destination: string;
-//     startDate: string;
-//     endDate: string;
-//     persons: number;
-//     imageUrl?: string;
-// }
 
 
 const ViewTrip = () => {
@@ -39,6 +26,8 @@ const ViewTrip = () => {
     const [activeTab, setActiveTab] = useState("Itinerary");
     const [openInvite, setOpenInvite] = useState(false);
     const [isTripLiked, setTripLiked] = useState(false);
+
+    const [imageUrl, setImageUrl] = useState('');
 
     const navigate = useNavigate();
 
@@ -52,13 +41,17 @@ const ViewTrip = () => {
         }
     }, [id]);
 
+    useEffect(()=>{
+        tripData&&fetchImageUrl();
+    },[tripData])
+
     const getTripData = async (id: string) => {
         try {
             const docRef = doc(db, 'AITrips', id);
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log(docSnap.data());
+                // console.log(docSnap.data());
                 setTripData(docSnap.data());
             } else {
                 console.log('Document does not exist');
@@ -66,6 +59,17 @@ const ViewTrip = () => {
             }
         } catch (error) {
             console.error('Error fetching trip data:', error);
+        }
+    };
+
+    const fetchImageUrl = async () => {
+        setImageUrl('');
+        const wikiTitle = await getWikipediaTitle(tripData?.tripData?.location);
+        if (wikiTitle) {
+          const image = await getPlaceImage(wikiTitle);
+          setImageUrl(image || 'No image found on Wikipedia');
+        } else {
+          setImageUrl('No Wikipedia title found for this place');
         }
     };
     return (
@@ -78,7 +82,7 @@ const ViewTrip = () => {
                         <div
                             className="absolute inset-0 bg-cover bg-center"
                             style={{
-                                backgroundImage: `url(/TripView.png)`,
+                                backgroundImage: `url(${imageUrl || '/TripView.png'})`,
                                 backgroundPosition: 'center 70%'
                             }}
                         />
@@ -161,7 +165,14 @@ const ViewTrip = () => {
                             <CityInfoSection locationInfo={tripData?.tripData?.locationInfo} activitiesToEnjoy={tripData?.tripData?.activitiesToEnjoy} />
                         </div>
                         <div className='lg:max-w-2xl md:max-w-2xl max-w-[25rem] flex  items-start mt-6 mx-2 md:mx-auto'>
-                            <img src="/paris.png" alt="paris" />
+                            {imageUrl && (
+                                <img 
+                                    src={imageUrl} 
+                                    alt={tripData?.tripData?.location || "location"} 
+                                    className="w-full h-auto bg-contain rounded-lg shadow-lg"
+                                />
+                            )}
+                            
                         </div>
                     </div>
                 </>
@@ -170,7 +181,7 @@ const ViewTrip = () => {
             {activeTab === 'Explore' &&
                 <>
                     <div className='px-12 mb-4 mt-4 ml-16'>
-                        <h2 className='text-3xl font-semibold'>Explore Top Sights in {tripData?.tripData?.tripDetails?.location}.</h2>
+                        <h2 className='text-3xl font-semibold'>Explore Top Sights in {tripData?.tripData?.location}.</h2>
                     </div>
                     <TopSights />
                 </>

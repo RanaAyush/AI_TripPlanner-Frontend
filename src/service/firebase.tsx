@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore} from 'firebase/firestore'
+import {getFirestore, collection, getDocs} from 'firebase/firestore'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,3 +19,11 @@ const firebaseConfig = {
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+// Function to fetch previous trips
+export const fetchPreviousTrips = async (userId: any) => {
+    const tripsCollection = collection(db, `users/${userId}/trips`);
+    const tripSnapshot = await getDocs(tripsCollection);
+    const tripList = tripSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return tripList;
+};

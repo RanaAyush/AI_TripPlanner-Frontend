@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Star } from "lucide-react";
 import { AiFillShop } from "react-icons/ai";
+import { getWikidataImage, searchWikidataEntity } from "@/service/ImagesAPI";
 
 const DayPlacesCard = ({ place }:any) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [image, setImage] = useState("");
 
     const toggleCollapse = () => setIsOpen((prev) => !prev);
+
+    const fetchPlaceImageFromWikidata = async (placeName:string) => {
+        const entityId = await searchWikidataEntity(placeName);
+        if (entityId) {
+          const imageUrl = await getWikidataImage(entityId);
+          setImage(imageUrl || "");
+        }
+        return 'No Wikidata entity found';
+    };
+
+    useEffect(()=>{
+        fetchPlaceImageFromWikidata(place?.placeName);
+    },[])
+      
 
     return (
         <div className="mb-4">
@@ -38,10 +54,10 @@ const DayPlacesCard = ({ place }:any) => {
                         <div className="p-4">
                             <div className="flex justify-between gap-4 flex-col md:flex-row">
                                 <img
-                                    // src={place.placeImageUrl || "/bali.jpg"}
-                                    src={ "/bali.jpg"}
+                                    src={image || "/bali.jpg"}
+                                    // src={ "/bali.jpg"}
                                     alt={place.name}
-                                    className="w-full h-48 object-cover rounded-lg mt-3"
+                                    className="w-48 h-48 object-cover rounded-lg mt-3"
                                 />
                                 <div className="my-auto">
                                     <h3 className="font-semibold">{place?.placeName}</h3>

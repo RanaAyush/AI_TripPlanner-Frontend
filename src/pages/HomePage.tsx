@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import Recommendations from '@/components/custom/Recommendations'
 import FeaturedPosts from '../components/custom/FeaturedPosts'
 import Footer from '../components/custom/Footer'
 import GuidInfo from '../components/custom/GuidInfo'
@@ -11,8 +12,9 @@ import Testimonials from '../components/custom/Testimonials'
 import './style.css'
 
 function App() {
-  return (
 
+  
+  return (
     <div>
       <div className="h-[50rem] md:h-full md:min-h-screen w-full relative overflow-hidden">
         <div className="orb orb1"></div>
@@ -39,6 +41,11 @@ function App() {
             className="w-[90%] md:w-[70%] max-w-5xl rounded-lg"
           />
         </div>
+      </div>
+      <div className='relative'>
+        <section className="flex flex-col items-center text-center p-6 md:p-8">
+          <Recommendations />
+        </section>
       </div>
       <div className='relative'>
         <GuidInfo />
