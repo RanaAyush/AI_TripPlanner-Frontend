@@ -71,7 +71,7 @@ const Recommendations = () => {
 
             if (Trips.length > 0) {
                 const userSelections = Trips.filter(trip => trip.userSelection).map(trip => trip.userSelection);
-                setUserSelection(userSelections.slice(0, 5));
+                setUserSelection(userSelections.slice(0, 3));
             }
         } catch (error) {
             console.error('Error fetching trips:', error);
