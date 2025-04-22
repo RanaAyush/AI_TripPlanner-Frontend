@@ -1,5 +1,4 @@
-import { ChevronLeft, ChevronRight, MapPin, Star } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import ItineraryDay from './ItineraryDay';
 import HotelOptionsCard from './HotelOptionsCard';
