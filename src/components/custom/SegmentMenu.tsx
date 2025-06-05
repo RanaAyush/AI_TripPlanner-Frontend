@@ -6,7 +6,7 @@ interface SegmentedMenuProps {
 }
 
 const SegmentedMenu = ({ activeTab, onTabChange }: SegmentedMenuProps) => {
-  const tabs = ["About", "Itinerary", "Explore"];
+  const tabs = ["About", "Itinerary", "Travel Plan"];
 
   return (
     <div className="flex items-center justify-start">

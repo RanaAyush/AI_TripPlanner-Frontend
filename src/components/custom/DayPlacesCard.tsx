@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Star } from "lucide-react";
 import { AiFillShop } from "react-icons/ai";
-import { getWikidataImage, searchWikidataEntity } from "@/service/ImagesAPI";
+import { getPlaceImage } from "@/service/ImagesAPI";
 
 const DayPlacesCard = ({ place }:any) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,17 +9,16 @@ const DayPlacesCard = ({ place }:any) => {
 
     const toggleCollapse = () => setIsOpen((prev) => !prev);
 
-    const fetchPlaceImageFromWikidata = async (placeName:string) => {
-        const entityId = await searchWikidataEntity(placeName);
-        if (entityId) {
-          const imageUrl = await getWikidataImage(entityId);
+    const fetchPlaceImage = async (placeName:string) => {
+        const imageUrl = await getPlaceImage(placeName);
+        if (imageUrl) {
           setImage(imageUrl || "");
         }
         return 'No Wikidata entity found';
     };
 
     useEffect(()=>{
-        fetchPlaceImageFromWikidata(place?.placeName);
+        fetchPlaceImage(place?.placeName);
     },[])
       
 

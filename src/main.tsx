@@ -16,63 +16,70 @@ import MyTrips from './pages/MyTrips.tsx'
 import ProfileSettings from './pages/ProfileSettings.tsx'
 import BlogPage from './pages/BlogPage.tsx'
 import BlogReadPage from './pages/BlogReadPage.tsx'
+import MainLayout from './pages/MainChatLayour.tsx'
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<HomePage/>
-  },
-  {
-    path:'planner-plan',
-    element:<PlannerPlan/>
-  },
-  {
-    path:'planner-meal',
-    element:<PlannerMeal/>
-  },
-  {
-    path:'contact',
-    element:<ContactPage/>
-  },
-  {
-    path:'about',
-    element:<AboutPage/>
-  },
-  {
-    path:'login',
-    element:<LoginPage/>
-  },
-  {
-    path:'view-trip/:id',
-    element:<ViewTrip/>
-  },
-  {
-    path:'my-trips',
-    element:<MyTrips/>
-  },
-  {
-    path:'profile-settings',
-    element:<ProfileSettings/>
-  },
-  {
-    path:'blogs',
-    element:<BlogPage/>
-  },
-  {
-    path:'blogs/:id',
-    element:<BlogReadPage/>
-  },
-  {
-    path:'*',
-    element:<NotFoundPage/>
+    path: '/',
+    element: <MainLayout />,
+    children:[
+      {
+        path:'',
+        element:<HomePage/>
+      },
+      {
+        path:'planner-plan',
+        element:<PlannerPlan/>
+      },
+      {
+        path:'planner-meal',
+        element:<PlannerMeal/>
+      },
+      {
+        path:'contact',
+        element:<ContactPage/>
+      },
+      {
+        path:'about',
+        element:<AboutPage/>
+      },
+      {
+        path:'login',
+        element:<LoginPage/>
+      },
+      {
+        path:'view-trip/:id',
+        element:<ViewTrip/>
+      },
+      {
+        path:'my-trips',
+        element:<MyTrips/>
+      },
+      {
+        path:'profile-settings',
+        element:<ProfileSettings/>
+      },
+      {
+        path:'blogs',
+        element:<BlogPage/>
+      },
+      {
+        path:'blogs/:id',
+        element:<BlogReadPage/>
+      },
+      {
+        path:'*',
+        element:<NotFoundPage/>
+      }
+    ]
   }
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_AUTH_KEY}>
-    <Toaster/>
-    <RouterProvider router={router}/>
+      <Toaster/>
+      <RouterProvider router={router}/>
     </GoogleOAuthProvider>
   </StrictMode>,
 )

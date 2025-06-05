@@ -13,9 +13,9 @@ import { Card } from '@/components/ui/card';
 import SegmentedMenu from '@/components/custom/SegmentMenu'
 import TripDetails from '@/components/custom/TripDetails'
 import CityInfoSection from '@/components/custom/CityInfoSection'
-import TopSights from '@/components/custom/TopSights'
+import TravelPlan from '@/components/custom/TravelPlan'
 import InviteDialog from '@/components/custom/InviteDialog'
-import { getPlaceImage, getWikipediaTitle } from '@/service/ImagesAPI'
+import { getPlaceImage } from '@/service/ImagesAPI'
 
 
 
@@ -64,10 +64,9 @@ const ViewTrip = () => {
 
     const fetchImageUrl = async () => {
         setImageUrl('');
-        const wikiTitle = await getWikipediaTitle(tripData?.tripData?.location);
+        const wikiTitle = await getPlaceImage(tripData?.tripData?.location);
         if (wikiTitle) {
-          const image = await getPlaceImage(wikiTitle);
-          setImageUrl(image || 'No image found on Wikipedia');
+          setImageUrl(wikiTitle || 'No image found on Wikipedia');
         } else {
           setImageUrl('No Wikipedia title found for this place');
         }
@@ -178,12 +177,12 @@ const ViewTrip = () => {
                 </>
             }
 
-            {activeTab === 'Explore' &&
+            {activeTab === 'Travel Plan' &&
                 <>
                     <div className='px-12 mb-4 mt-4 ml-16'>
-                        <h2 className='text-3xl font-semibold'>Explore Top Sights in {tripData?.tripData?.location}.</h2>
+                        <h2 className='text-3xl font-semibold'>Plan your travel for {tripData?.tripData?.location}.</h2>
                     </div>
-                    <TopSights />
+                    <TravelPlan tripData={tripData} />
                 </>
             }
 

@@ -5,6 +5,8 @@ import HotelOptionsCard from './HotelOptionsCard';
 
 const TripDetails = ({ tripData }: any) => {
     const [hotelOptions, sethotelOptions]:any = useState([]);
+    const startDate = tripData.tripData?.startDate;
+    const days = tripData.userSelection?.days;
     const { itinerary } = tripData.tripData;
     useEffect(() => {
         // console.log(tripData.tripData?.hotelOptions);
@@ -47,7 +49,7 @@ const TripDetails = ({ tripData }: any) => {
                         className="flex gap-4 transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${currentSlide * 60}%)`,
-                            width: `${hotelOptions.length * 50}%`, // Adjust width dynamically
+                            width: `${hotelOptions.length * 50}%`,
                         }}
                     >
                         {hotelOptions.map((hotel:any, index:number) => (
@@ -56,7 +58,7 @@ const TripDetails = ({ tripData }: any) => {
 
                                 style={{ flexBasis: "35%" }}
                             >
-                                <HotelOptionsCard hotel={hotel} index={index}/>
+                                <HotelOptionsCard hotel={hotel} index={index} startDate={startDate} days={days}/>
                             </div>
                         ))}
                     </div>

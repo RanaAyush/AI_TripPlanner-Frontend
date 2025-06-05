@@ -1,4 +1,4 @@
-import { getPlaceImage, getWikipediaTitle } from '@/service/ImagesAPI';
+import { getPlaceImage } from '@/service/ImagesAPI';
 import { Card, CardContent } from '../ui/card'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -9,9 +9,8 @@ const MyTripsTripCard = ({trip}:any) => {
 
     const fetchImageUrl = async () => {
         setImageUrl('');
-        const wikiTitle = await getWikipediaTitle(trip?.tripData?.location);
-        if (wikiTitle) {
-          const image = await getPlaceImage(wikiTitle);
+        const image = await getPlaceImage(trip?.tripData?.location);
+        if (image) {
           setImageUrl(image || '');
         } else {
           setImageUrl('');

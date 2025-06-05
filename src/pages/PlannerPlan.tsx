@@ -36,6 +36,7 @@ const PlannerPlan = () => {
     const { toast } = useToast()
     const [formData, setFormData] = React.useState({
         destination: "",
+        source: "",
         date: null as Date | null,
         people: 0,
         days: 2,
@@ -128,6 +129,20 @@ const PlannerPlan = () => {
                                 value={formData.destination}
                                 onChange={(e) =>
                                     handleInputChange("destination", e.target.value)
+                                }
+                            />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-md font-medium">
+                                From where you are travelling?
+                            </label>
+                            <Input
+                                type="text"
+                                placeholder="Your current location(City)"
+                                className="w-full"
+                                value={formData.source}
+                                onChange={(e) =>
+                                    handleInputChange("source", e.target.value)
                                 }
                             />
                         </div>

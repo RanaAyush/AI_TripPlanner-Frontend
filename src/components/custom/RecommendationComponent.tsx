@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '../ui/card'
-import { getPlaceImage, getWikipediaTitle } from '@/service/ImagesAPI';
+import { getPlaceImage } from '@/service/ImagesAPI';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
 import { chatSession } from '@/service/AIModel';
@@ -16,9 +16,8 @@ const RecommendationComponent = ({destination}:any) => {
 
     const fetchImageUrl = async () => {
         setImageUrl('');
-        const wikiTitle = await getWikipediaTitle(destination.location);
-        if (wikiTitle) {
-          const image = await getPlaceImage(wikiTitle);
+        const image = await getPlaceImage(destination.location);
+        if (image) {
           setImageUrl(image || '');
         } else {
           setImageUrl('');
