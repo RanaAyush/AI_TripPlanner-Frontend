@@ -1,4 +1,4 @@
-import { MapPin, Star, CreditCard, Loader2 } from 'lucide-react'
+import { MapPin, Star, CreditCard } from 'lucide-react'
 import { Card, CardContent } from '../ui/card'
 import { useEffect, useState } from 'react';
 import { chatSession } from '../../service/AIModel';
@@ -14,12 +14,12 @@ import {
 import HotelInvoice from './HotelInvoice';
 import { getPlaceImage } from '@/service/ImagesAPI';
 
-const HotelOptionsCard = ({ hotel, index, startDate, days }: any) => {
+const HotelOptionsCard = ({ hotel, startDate, days }: any) => {
     // const image = ['/HotelImages/img1.jpeg', '/HotelImages/img2.jpeg', '/HotelImages/img3.jpeg', '/HotelImages/img4.jpeg', '/HotelImages/img5.jpeg', '/HotelImages/img6.jpeg', '/HotelImages/img7.jpeg', '/HotelImages/img8.jpeg', '/HotelImages/img9.jpeg',];
     const [bookingUrl, setBookingUrl] = useState<string>('');
-    const [showInvoice, setShowInvoice] = useState(false);
+    // const [showInvoice, setShowInvoice] = useState(false);
     const [paymentSuccess, setPaymentSuccess] = useState(false);
-    let i = Math.floor(Math.random() * 8);
+    // let i = Math.floor(Math.random() * 8);
     const [image, setImage] = useState("");
 
     const fetchPlaceImage = async (placeName:string) => {
@@ -75,7 +75,9 @@ const HotelOptionsCard = ({ hotel, index, startDate, days }: any) => {
             image: "https://example.com/your_logo",
             handler: function (response: any) {
                 setPaymentSuccess(true);
-                setShowInvoice(true);
+                console.log(response);
+                
+                // setShowInvoice(true);
             },
             prefill: {
                 name: "User Name",

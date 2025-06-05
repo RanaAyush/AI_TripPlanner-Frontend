@@ -19,7 +19,7 @@ const TravelPlan = ({ tripData }: any) => {
   const source = tripData.userSelection.source || "Delhi";
   const [iataCodes, setIataCodes] = useState<{ source: string, destination: string } | null>(null);
   const [isLoadingIATA, setIsLoadingIATA] = useState(false);
-  const [showInvoice, setShowInvoice] = useState(false);
+  // const [showInvoice, setShowInvoice] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
   
 
@@ -85,9 +85,9 @@ const TravelPlan = ({ tripData }: any) => {
       description: `Flight from ${source} to ${location}`,
       image: "https://example.com/your_logo",
       handler: function (response: any) {
-        // console.log(response);
+        console.log(response);
         setPaymentSuccess(true);
-        setShowInvoice(true);
+        // setShowInvoice(true);
       },
       prefill: {
         name: "User Name",
