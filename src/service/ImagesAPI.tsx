@@ -1,6 +1,6 @@
 export const getPlaceImage = async (placeName: string) => {
     try {
-        const response = await fetch(`http://35.154.208.120:8000/api/place-image/?place=${encodeURIComponent(placeName)}`);
+        const response = await fetch(`https://13.232.2.55/api/place-image/?place=${encodeURIComponent(placeName)}`);
         const data = await response.json();
         
         if (!data.imageUrl) {
