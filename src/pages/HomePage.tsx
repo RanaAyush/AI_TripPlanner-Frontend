@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import Recommendations from '@/components/custom/Recommendations'
-import FeaturedPosts from '../components/custom/FeaturedPosts'
+// import FeaturedPosts from '../components/custom/FeaturedPosts'
 import Footer from '../components/custom/Footer'
 import GuidInfo from '../components/custom/GuidInfo'
 import Herosection from "../components/custom/Herosection"
@@ -8,7 +8,7 @@ import HolaTripCards from '../components/custom/HolaTripCards'
 import Navbar from '../components/custom/Navbar'
 import NewsletterSection from '../components/custom/NewsletterSection'
 import PlacesCard from '../components/custom/PlacesCard'
-import Testimonials from '../components/custom/Testimonials'
+// import Testimonials from '../components/custom/Testimonials'
 import './style.css'
 
 function App() {
@@ -64,18 +64,18 @@ function App() {
         </div>
         <PlacesCard />
       </div>
-      <div className='flex flex-col mt-28 gap-8 px-8 md:px-24 mb-10 relative'>
+      {/* <div className='flex flex-col mt-28 gap-8 px-8 md:px-24 mb-10 relative'>
         <div className="flex absolute -z-10 left-0 -top-16">
           <img src="/sideGIF/side3.png" alt="sideimg" />
         </div>
         <Testimonials />
-      </div>
-      <div className='flex flex-col mt-28 gap-8 px-4 md:px-24 relative'>
+      </div> */}
+      {/* <div className='flex flex-col mt-28 gap-8 px-4 md:px-24 relative'>
         <FeaturedPosts />
         <div className="flex absolute -z-10 right-0 -bottom-32">
           <img src="/sideGIF/side4.png" alt="sideimg" />
         </div>
-      </div>
+      </div> */}
       <div className='mt-28 px-2 md:px-16'>
         <NewsletterSection />
       </div>

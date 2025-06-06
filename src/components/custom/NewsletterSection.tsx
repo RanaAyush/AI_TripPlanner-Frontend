@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { useToast } from "@/hooks/use-toast"
+import { useState } from "react";
 
 const NewsletterSection = () => {
+  const [message,setMessage] = useState('')
+  const { toast } = useToast();
+    const handleSubscribe = ()=>{
+      setMessage('')
+      toast({
+        variant: "default",
+        description: "Yay!. you subscribed to our newsletter.",
+      })
+    }
   return (
     <div className="max-w-6xl mx-auto py-12 flex flex-col gap-24">
       {/* Trip Ready Section */}
@@ -55,10 +66,12 @@ const NewsletterSection = () => {
             <div className="flex gap-4">
               <Input
                 type="email"
+                value={message}
+                onChange={(e)=>setMessage(e.target.value)}
                 placeholder="Type your email address"
                 className="flex-1 rounded-full h-12"
               />
-              <Button className="bg-black text-white px-6 rounded-full h-12">
+              <Button className="bg-black text-white px-6 rounded-full h-12" onClick={handleSubscribe}>
                 Subscribe
               </Button>
             </div>
